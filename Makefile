@@ -7,3 +7,6 @@ serve:
 
 build:
 	zola build
+
+format:
+	prettier -w templates sass
