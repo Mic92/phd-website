@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block section %}
+
+<div class="container">
+  <h1 class="title"><img class="img-fluid logo" src="logos/university-of-edinburgh-logo.png"></img>Thesis: Dependable Virtualized Systems <a href="pdfs/Thesis_Dependable_Virtualised_Systems.pdf">[PDF]</a></h1>
+
+  <p class="author">
+    by Jörg Thalheim <a href="https://thalheim.io">[Homepage]</a> <a href="https://thalheim.io/cv.pdf">[CV]</a>
+  </p>
+
+  <p>
+    Virtual machines and containers are widely used in data centres and in the cloud for
+    software deployment and management. Their popularity is based on higher capacity
+    utilisation, lower maintenance costs, and better scalability by creating an abstraction
+    layer on top of physical hardware. The economics and scalability of virtualised
+    applications require that the workloads of multiple customers can run on the same
+    hardware with low overhead without compromising security. To address this need,
+    in this work we introduce a new set of IO middleware that allows users to run
+    smaller containers and virtual machines and deploy them in a more secure manner:
+  </p>
+
+  <p class="container">
+    <h2>Research projects</h2>
+    <div class="row">
+      <div class="col-lg">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="card-title"><img class="img-fluid logo" src="logos/cntr.png">Cntr</h3>
+            <p class="card-text">
+              CNTR provides a way to extend application containers at runtime with tools
+              deployed in a different container. In this way, you can create "slim" images that
+              contain only the actual application, while all the tools needed for monitoring,
+              testing, and debugging reside in a "fat" image that only needs to be deployed
+              when needed.
+              CNTR achieves this by creating a nested namespace in the
+              application container that proxies files from a remote container using a FUSE
+              filesystem.
+            </p>
+          </div>
+          <div class="card-body"><a href="https://www.usenix.org/conference/atc18/presentation/thalheim">[USENIX ATC’18]</a></div>
+          <div class="card-body"><a href="pdfs/Cntr-ATC-2018.pdf">[PDF]<a/> <a href="pdfs/cntr-presentation.pdf">[Talk]</a> <a href="https://github.com/Mic92/cntr">[Code]</a></div>
+        </div>
+      </div>
+      <div class="col-lg">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="card-title"><img class="img-fluid logo" src="logos/vmsh.png">VMSH</h3>
+            <p class="card-text">
+              VMSH allows users to attach services to running virtual machines independent
+              of the guest userspace and without any pre-installed agents. Similar to C NTR
+              this allows developers to build more light-weight virtual machines by deploying
+              additional services in a separate user-provided file system image on-demand.
+              VMSH achieves this by side-loading kernel code into the guest and mounting
+              a filesystem based on its own block device in a light-weight container without
+              affecting the applications in the VM.
+          </div>
+          <div class="card-body"><a href="https://dl.acm.org/doi/abs/10.1145/3492321.3519589">[ACM EuroSys’22]</a></div>
+          <div class="card-body"><a href="pdfs/vmsh-eurosys22-published-by-acm.pdf">[PDF]</a> <a href="VMSH-eurosys22-slides.pdf">[Talk]</a> <a href="https://github.com/Mic92/vmsh">[Code]</a></div>
+        </div>
+      </div>
+      <div class="col-lg">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="card-title"><img class="img-fluid logo" src="logos/rkt-io.png">Rkt-IO</h3>
+            <p class="card-text">
+             RKT-IO leverages trusted execution environments to run workloads in
+             containers and virtual machines to protect them from other tenants and the
+             cloud provider on the same host, but without sacrificing on I/O performance
+             that is usually degraded by this protection. It does so by providing a userspace
+             network and storage I/O stack in the form of a library OS based on Linux that
+             directly accesses the hardware from within the TEE by-passing the host kernel.
+            </p>
+          </div>
+          <div class="card-body"><a href="https://dl.acm.org/doi/10.1145/3447786.3456255">[ACM EuroSys’21]</a></div>
+          <div class="card-body"><a href="pdfs/rkt-io-eurosys21.pdf">[PDF]</a> <a href="pdfs/rkt-io-eurosys21_slides.pdf">[Talk]</a> <a href="https://github.com/Mic92/rkt-io">[Code]</a></div>
+        </div>
+      </div>
+    </div>
+  </p>
+
+  <p class="container">
+    <h2>Other Projects</h2>
+    <div class="row align-items-start">
+      <div class="col">
+        <div class="card">
+          <div class="card-body"><h3 class="card-title">Sieve</h3></div>
+          <div class="card-body"><a href="https://dl.acm.org/doi/abs/10.1145/3492321.3519589">[Middleware 2017]</a></div>
+          <div class="card-body"><a href="pdfs/Sieve-Middleware-2017.pdf">[PDF]</a> <a href="pdfs/Sieve_Middleware_2017_slides.pdf">[Talk]</a> <a href="https://sieve-microservices.github.io/">[Code]</a></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-body"><h3 class="card-title">Speicher</h3></div>
+          <div class="card-body"> <a href="https://www.usenix.org/conference/fast19/presentation/bailleu">[Usenix FAST 2018]</a></div>
+          <div class="card-body"> <a href="pdfs/Speicher-FAST-2019.pdf">[PDF]</a> <a href="pdfs/Speicher-USENIX-FAST-2019.pptx">[Talk]</a></div>
+        </div>
+      </div>
+    </div>
+  </p>
+</div>
+
+
+{% endblock section %}
